@@ -14,10 +14,11 @@ Embora todas as alternativas cheguem ao mesmo resultado, o foco aqui é evidenci
 
 ## 📂 Estrutura do Repositório
 
-- [`query_temp_tables.sql`](./query_temp_tables.sql) → versão principal, com **tabelas temporárias**  
-- [`query_CTE.sql`](./query_cte.sql) → versão alternativa, com **CTEs**  
-- [`query_subqueries.sql`](./query_subqueries.sql) → versão alternativa, com **subqueries aninhadas**  
-
+- [`README.md`](./README.md) → Documentação do projeto
+- [`query_CTE.sql`](./query_CTE.sql) → versão alternativa, com **CTEs**  
+- [`query_subqueries.sql`](./query_subqueries.sql) → versão alternativa, com **subqueries aninhadas**
+- [`query_temp_tables.sql`](./query_temp_tables.sql) → versão principal, com **tabelas temporárias**   
+- [`resultados.png`](./resultados.png) → imagem com resultados de exemplo
 ---
 
 ## 🛠️ Script com Tabelas Temporárias
@@ -94,7 +95,7 @@ ORDER BY [ID Funcionario],[Data Pedido]
 
 Também incluí versões sem tabelas temporárias para comparação:
 
-- [`query_CTE.sql`](./query_cte.sql) → usando CTEs
+- [`query_CTE.sql`](./query_CTE.sql) → usando CTEs
 
 - [`query_subqueries.sql`](./query_subqueries.sql) → usando subqueries aninhadas
 
