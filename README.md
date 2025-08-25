@@ -1,0 +1,1 @@
+# Comparando-Abordagens-no-SQL-Server-Tabelas-Tempor-rias-CTEs-e-Subqueries-em-An-lise-de-Dados
