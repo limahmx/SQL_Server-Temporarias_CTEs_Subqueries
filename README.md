@@ -12,7 +12,7 @@ Embora todas as alternativas cheguem ao mesmo resultado, o foco aqui é evidenci
 
 ---
 
-## 📌 Estrutura do Repositório
+## 📂 Estrutura do Repositório
 
 - [`query_temp_tables.sql`](./query_temp_tables.sql) → versão principal, com **tabelas temporárias**  
 - [`query_CTE.sql`](./query_cte.sql) → versão alternativa, com **CTEs**  
