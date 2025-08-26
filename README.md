@@ -35,8 +35,8 @@ Essas tabelas são unidas ao final para gerar a consulta consolidada.
 ### Exemplo de criação de tabela temporária:
 
 ```sql
-IF OBJECT_ID('tempdb.dbo.#tabela_produtos','U') IS NOT NULL 	-- Verifica se já existe temporária com mesmo nome
-BEGIN DROP TABLE tempdb.dbo.#tabela_produtos; END				-- previnindo ERRO na execução
+IF OBJECT_ID('tempdb.dbo.#tabela_produtos','U') IS NOT NULL -- Verifica se já existe temporária com 
+BEGIN DROP TABLE tempdb.dbo.#tabela_produtos; END			-- mesmo nome, previnindo ERRO na execução
 
 
 SELECT 
