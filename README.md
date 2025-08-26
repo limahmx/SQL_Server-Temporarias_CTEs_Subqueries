@@ -35,8 +35,9 @@ Essas tabelas são unidas ao final para gerar a consulta consolidada.
 ### Exemplo de criação de tabela temporária:
 
 ```sql
-IF OBJECT_ID('tempdb.dbo.#tabela_produtos','U') IS NOT NULL
-BEGIN DROP TABLE tempdb.dbo.#tabela_produtos; END
+IF OBJECT_ID('tempdb.dbo.#tabela_produtos','U') IS NOT NULL 	-- Verifica se já existe temporária com mesmo nome
+BEGIN DROP TABLE tempdb.dbo.#tabela_produtos; END				-- previnindo ERRO na execução
+
 
 SELECT 
 	PD.ProductKey,
@@ -45,7 +46,8 @@ SELECT
 	(CASE WHEN PDS.EnglishProductSubcategoryName IS NULL THEN 'N/A'
 		ELSE PDS.EnglishProductSubcategoryName END) AS 'EnglishProductSubcategoryName'
 
-INTO #tabela_produtos
+INTO #tabela_produtos			-- "INTO" copia dados de uma tabela para uma nova tabela
+								-- "#" antes do nome da tabela, define como uma temporária local
 
 FROM AdventureWorksDW2019.dbo.DimProduct AS PD WITH (NOLOCK)
 
