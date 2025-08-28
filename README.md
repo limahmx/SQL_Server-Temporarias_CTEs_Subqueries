@@ -34,6 +34,7 @@ O arquivo [`query_temp_tables.sql`](./query_temp_tables.sql) cria quatro tabelas
 
 Essas tabelas são unidas ao final para gerar a consulta consolidada.
 
+---
 ### Exemplo de criação de tabela temporária:
 
 ```sql
@@ -83,6 +84,7 @@ ORDER BY [ID Funcionario],[Data Pedido]
 
 <img width="786" height="306" alt="resultados" src="https://github.com/user-attachments/assets/e97911c1-b754-4773-b979-ef257c61d1d4" />
 
+---
 ## 🚀 Vantagens das Tabelas Temporárias
 
 - Organização → a query fica dividida em blocos claros e independentes
@@ -95,6 +97,7 @@ ORDER BY [ID Funcionario],[Data Pedido]
 
 💡 Por esses motivos, as tabelas temporárias são frequentemente a melhor escolha em consultas analíticas e pipelines de BI.
 
+---
 ## 🔄 Alternativas
 
 Também incluí versões sem tabelas temporárias para comparação:
@@ -116,6 +119,7 @@ Essas abordagens são válidas, mas têm restrições que, em cenários de BI, p
 | **Depuração**        | ✅ Fácil (pode inspecionar)                 | Difícil                                        | Difícil                    |
 | **Uso típico**       | ETL, BI, queries complexas                 | Queries complexas não reutilizadas, recursivas | Consultas simples e locais |
 
+---
 ## 🔬 Teste de Performance
 
 Para validar o comportamento das três abordagens, executei múltiplos testes em cada uma, usando o **AdventureWorksDW2019**.  
@@ -142,6 +146,7 @@ Já **CTEs** e **subqueries** tendem a recalcular seus resultados a cada utiliza
 
 💡 **Observação**: A diferença tende a ser ainda maior em bancos maiores e consultas mais complexas, reforçando que, em cenários de **ETL e BI**, as tabelas temporárias geralmente oferecem o melhor custo-benefício.  
 
+---
 ## 🎯 Quando usar cada um?
 
 - **Tabelas Temporárias**
@@ -153,6 +158,7 @@ Já **CTEs** e **subqueries** tendem a recalcular seus resultados a cada utiliza
 - **Subqueries**
   👉 Ideais em transformações pontuais e simples, geralmente em consultas pequenas.
 
+---
 ## ✅ Conclusão
 
 Este projeto mostra como a mesma análise pode ser resolvida de três formas diferentes.
