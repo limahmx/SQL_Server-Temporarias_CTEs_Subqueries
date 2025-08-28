@@ -14,7 +14,9 @@ Embora todas as alternativas cheguem ao mesmo resultado, o foco aqui é evidenci
 
 ## 📂 Estrutura do Repositório
 
+
 - [`README.md`](./README.md) → Documentação do projeto
+- [`AdventureWorksDW2019.zip`](./AdventureWorksDW2019.zip) → Pasta compactada com banco de dados em formato ".bak"
 - [`query_CTE.sql`](./query_CTE.sql) → versão alternativa, com **CTEs**  
 - [`query_subqueries.sql`](./query_subqueries.sql) → versão alternativa, com **subqueries aninhadas**
 - [`query_temp_tables.sql`](./query_temp_tables.sql) → versão principal, com **tabelas temporárias**   
