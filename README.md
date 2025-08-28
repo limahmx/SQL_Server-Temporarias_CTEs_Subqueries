@@ -105,7 +105,7 @@ Também incluí versões sem tabelas temporárias para comparação:
 
 Essas abordagens são válidas, mas têm restrições que, em cenários de BI, podem limitar seu uso.
 
-## 📊 Comparação: Tabelas Temporárias x CTEs x Subqueries
+### 📊 Comparação: Tabelas Temporárias x CTEs x Subqueries
 
 | Critério             | Tabelas Temporárias (`#temp`)              | CTEs (`WITH`)                                  | Subqueries                 |
 | -------------------- | ------------------------------------------ | ---------------------------------------------- | -------------------------- |
@@ -115,6 +115,32 @@ Essas abordagens são válidas, mas têm restrições que, em cenários de BI, p
 | **Legibilidade**     | Média (mais código)                        | ✅ Muito alta                                   | Baixa se muito aninhada    |
 | **Depuração**        | ✅ Fácil (pode inspecionar)                 | Difícil                                        | Difícil                    |
 | **Uso típico**       | ETL, BI, queries complexas                 | Queries complexas não reutilizadas, recursivas | Consultas simples e locais |
+
+## 🔬 Teste de Performance
+
+Para validar o comportamento das três abordagens, executei múltiplos testes em cada uma, usando o **AdventureWorksDW2019**.  
+Cada consulta retornou **30.029 linhas**, e os resultados médios foram:
+
+| Método        | CPU médio (ms) | Tempo decorrido médio (ms) |
+|---------------|----------------|-----------------------------|
+| Temp Table    | 72,67          | 298,00                      |
+| CTE           | 168,33         | 363,33                      |
+| Subqueries    | 137,33         | 351,67                      |
+
+📌 **Diferença de performance em relação às tabelas temporárias**:
+- **CTE** → +131,65% de CPU e +21,92% de tempo  
+- **Subqueries** → +88,99% de CPU e +18,01% de tempo  
+
+### 🚀 Por que as temporárias foram mais rápidas?
+
+As **tabelas temporárias** levam vantagem porque:  
+- São armazenadas no `tempdb` e podem ter **estatísticas próprias**, permitindo ao otimizador criar planos de execução mais eficientes.  
+- **Evita recalcular dados**: os resultados intermediários são gravados uma vez e reutilizados.  
+- Suportam **índices adicionais**, melhorando consultas sobre grandes volumes.  
+
+Já **CTEs** e **subqueries** tendem a recalcular seus resultados a cada utilização dentro da query, o que aumenta o consumo de CPU e tempo.
+
+💡 **Observação**: A diferença tende a ser ainda maior em bancos maiores e consultas mais complexas, reforçando que, em cenários de **ETL e BI**, as tabelas temporárias geralmente oferecem o melhor custo-benefício.  
 
 ## 🎯 Quando usar cada um?
 
