@@ -25,6 +25,8 @@ Embora todas as alternativas cheguem ao mesmo resultado, o foco aqui é evidenci
 
 ## 🛠️ Script com Tabelas Temporárias
 
+Tabelas temporárias são criadas usando a cláusula "INTO", acompanhada de "#nometabela".
+
 O arquivo [`query_temp_tables.sql`](./query_temp_tables.sql) cria quatro tabelas temporárias para organizar os dados antes de consolidar o resultado final:
 
 1. **#tabela_produtos** → organiza categorias e subcategorias de produtos  
