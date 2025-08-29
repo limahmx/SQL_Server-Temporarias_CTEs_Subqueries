@@ -146,13 +146,13 @@ As **tabelas temporárias** levam vantagem porque:
 
 Já **CTEs** e **subqueries** tendem a recalcular seus resultados a cada utilização dentro da query, o que aumenta o consumo de CPU e tempo.
 
-💡 **Observação**: A diferença tende a ser ainda maior em bancos maiores e consultas mais complexas, reforçando que, em cenários de **ETL e BI**, as tabelas temporárias geralmente oferecem o melhor custo-benefício.  
+💡 **Observação**: A diferença tende a ser ainda maior em hardware empresarial, bancos maiores e consultas mais complexas, reforçando que, em cenários de **ETL e BI**, as tabelas temporárias geralmente oferecem o melhor custo-benefício.  
 
 ---
 ## 🎯 Quando usar cada um?
 
 - **Tabelas Temporárias**
-  👉 Melhor opção em análise de dados/BI, quando há grandes volumes, múltiplas etapas de transformação e necessidade de reaproveitamento.
+  👉 Ótima opção em análise de dados/BI, quando há grandes volumes, múltiplas etapas de transformação e necessidade de reaproveitamento.
 
 - **CTEs**
   👉 Úteis para melhorar legibilidade, principalmente em queries complexas de leitura única ou recursivas.
